@@ -9,9 +9,9 @@ const app = express();
 // Set the view engine to EJS
 app.set('view engine', 'ejs'); // Set EJS as the view engine
 app.set('views', path.join(__dirname, 'views'));
-
+console.log(__dirname);
 // Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 // Use the routes defined in routes.js
