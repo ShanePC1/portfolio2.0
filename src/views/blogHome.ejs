@@ -1,0 +1,87 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog Title</title>
+    <link rel="stylesheet" href="/styles/gridStyles.css">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    header {
+        text-align: center;
+        padding: 20px;
+
+        background-color: #000F12;
+        color: #FFF1FD;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    article {
+        margin-bottom: 40px;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #000F12;
+  color: #FFF1FD;
+    }
+
+    .post-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .like-dislike {
+        display: flex;
+        align-items: center;
+    }
+
+    .comment-section {
+        margin-top: 20px;
+    }
+
+    .comment {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+    </style>
+         <link rel="stylesheet" href="/styles/navStyles.css">
+</head>
+
+<body>
+    <header>
+  <%- include('./partials/header'); %>
+</header>
+
+    <main>
+    <!--         <header>
+        <h1>Your Blog Title</h1>
+    </header> -->
+        <article>
+            <h2>Blog Post Title 1</h2>
+            <p>Blog post content goes here.</p>
+            <div class="post-actions">
+                <div class="like-dislike">
+                    <button class="like-btn">Like</button>
+                    <button class="dislike-btn">Dislike</button>
+                </div>
+                <div class="comment-count">Comments: 0</div>
+            </div>
+            <div class="comment-section">
+                <div class="comment">
+                    <p><strong>User1:</strong> This is a great post!</p>
+                </div>
+                <!-- More comments go here -->
+            </div>
+        </article>
+        <!-- More articles go here -->
+    </main>
+</body>
+
+</html>

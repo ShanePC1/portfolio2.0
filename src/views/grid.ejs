@@ -1,56 +1,80 @@
 <!-- views/grid.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid Page</title>
-  <!-- <link rel="stylesheet" href="/styles/styles.css"> -->
-  <style>
-    .grid-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .grid-item {
-      width: 150px;
-      height: 150px;
-      margin: 10px;
-      overflow: hidden;
-    }
-
-    .grid-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Grid</title>
+  <link rel="stylesheet" href="/styles/navStyles.css">
+  <link rel="stylesheet" href="/styles/gridStyles.css">
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="/" class="nav-link">Home Page</a>
-      <a href="/grid" class="nav-link">Grid</a>
-      <a href="/contact" class="nav-link">Contact</a>
-    </div>
-  </nav>
-
-  <div class="container">
-    <h1>Photo Grid</h1>
-
-    <div class="grid-container">
-      <% photos.forEach(photo => { %>
-        <div class="grid-item">
-          <img src="<%= photo.imageUrl %>" alt="<%= photo.description %>">
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+    <div class="image-container">
+        <% photos.forEach((photo, index) => { %>
+        <div class="image-wrapper" onclick="showModal('<%= photo.imageUrl %>', '<%= photo.description %>')">
+            <img src="<%= photo.imageUrl %>" alt="<%= photo.description %>">
         </div>
-      <% }); %>
+        <% }); %>
     </div>
-  </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content" id="modalContent">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Photo">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+    <!-- ... -->
+    <script>
+    function showModal(imageUrl, description) {
+        const modal = document.getElementById('myModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
 
+        // Create a new image element to load the image
+        const tempImage = new Image();
+
+        tempImage.onload = function() {
+            // Once the image is loaded, set its source
+            modalImage.src = imageUrl;
+
+            // Set the description
+            modalDescription.innerHTML = description;
+
+            // Display the modal
+            modal.style.display = 'flex';
+
+            // Calculate the aspect ratio and set the height after displaying
+            const aspectRatio = tempImage.width / tempImage.height;
+            const newHeight = modalContent.offsetWidth / aspectRatio;
+
+            // Set the height of the modal content
+            modalContent.style.height = `${newHeight}px`;
+
+            // Clean up the temporary image
+            tempImage.onload = null;
+        };
+
+        tempImage.src = imageUrl;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('myModal');
+        const modalContent = document.getElementById('modalContent');
+
+        // Reset the height when closing
+        modalContent.style.height = 'auto';
+
+        modal.style.display = 'none';
+    }
+    </script>
+    <!-- ... -->
 </body>
 
 </html>
