@@ -15,7 +15,7 @@
         <%- include('./partials/header'); %>
     </header>
     <div class="image-container">
-        <% photos.forEach((photo, index) => { %>
+        <% genCarPhotos.forEach((photo, index) => { %>
         <div class="image-wrapper" onclick="showModal('<%= photo.imageUrl %>', '<%= photo.description %>','<%= index %>')">
             <img src="<%= photo.imageUrl %>" alt="<%= photo.description %>">
         </div>
@@ -35,7 +35,7 @@
     </div>
     <!-- ... -->
     <script>
-        const photos = <%- JSON.stringify(photos) %>;
+        const photos = <%- JSON.stringify(genCarPhotos) %>;
     let currentIndex ;
 
     function showModal(imageUrl, description,index) {
