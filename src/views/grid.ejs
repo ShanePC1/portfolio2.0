@@ -1,80 +1,46 @@
-<!-- views/grid.ejs -->
+<!-- views/home.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Grid</title>
-  <link rel="stylesheet" href="/styles/navStyles.css">
-  <link rel="stylesheet" href="/styles/gridStyles.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/styles/navStyles.css">
+    <link rel="stylesheet" href="/styles/gridStyles.css">
 </head>
 
 <body>
     <header>
         <%- include('./partials/header'); %>
     </header>
+    <div class="container">
+        <h1>Recent Posts</h1>
+    </div>
     <div class="image-container">
-        <% photos.forEach((photo, index) => { %>
-        <div class="image-wrapper" onclick="showModal('<%= photo.imageUrl %>', '<%= photo.description %>')">
+        <% portfolioPhotos.forEach((photo, index) => { %>
+        <div class="image-wrapper" onclick="redirectTo('<%= photo.description %>')">
             <img src="<%= photo.imageUrl %>" alt="<%= photo.description %>">
         </div>
         <% }); %>
     </div>
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content" id="modalContent">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Photo">
-            <p id="modalDescription"></p>
-        </div>
-    </div>
-    <!-- ... -->
     <script>
-    function showModal(imageUrl, description) {
-        const modal = document.getElementById('myModal');
-        const modalContent = document.getElementById('modalContent');
-        const modalImage = document.getElementById('modalImage');
-        const modalDescription = document.getElementById('modalDescription');
+    function redirectTo(desc) {
+        // 
+        if (desc === 'drift') {
+            window.location.href = "/grid/cars/drifting";
+        } else if (desc === 'japan') {
+            window.location.href = "/grid/japan";
+        } else if (desc === 'cars') {
+            window.location.href = "/grid/cars/all";
+        }else if (desc === 'surf') {
+            window.location.href = "/grid/surf";
+        }else if (desc.includes('ai')) {
+            window.location.href = "/grid/aiContent";
+        }
 
-        // Create a new image element to load the image
-        const tempImage = new Image();
-
-        tempImage.onload = function() {
-            // Once the image is loaded, set its source
-            modalImage.src = imageUrl;
-
-            // Set the description
-            modalDescription.innerHTML = description;
-
-            // Display the modal
-            modal.style.display = 'flex';
-
-            // Calculate the aspect ratio and set the height after displaying
-            const aspectRatio = tempImage.width / tempImage.height;
-            const newHeight = modalContent.offsetWidth / aspectRatio;
-
-            // Set the height of the modal content
-            modalContent.style.height = `${newHeight}px`;
-
-            // Clean up the temporary image
-            tempImage.onload = null;
-        };
-
-        tempImage.src = imageUrl;
-    }
-
-    function closeModal() {
-        const modal = document.getElementById('myModal');
-        const modalContent = document.getElementById('modalContent');
-
-        // Reset the height when closing
-        modalContent.style.height = 'auto';
-
-        modal.style.display = 'none';
     }
     </script>
-    <!-- ... -->
 </body>
 
 </html>
