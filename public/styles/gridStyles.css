@@ -52,9 +52,9 @@ body {
     display: flex;
     max-width: 80%;
     max-height: 80%;
-    overflow-y: auto;
+    overflow-y: no;
     text-align: left;
-    background-color: black;
+/*    background-color: black;*/
     color: white;
 }
 
@@ -62,6 +62,7 @@ body {
     width: auto;
     max-width: 90%;
     /* Adjusted width for the image it was 100*/
+
     height: auto;
     max-height: 100%;
     object-fit: contain;
@@ -72,25 +73,20 @@ body {
     /*        width: 100%;*/
     padding: 20px;
     box-sizing: border-box;
+    background-color: black;
     /*        text-align: left;*/
 
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
 
+.imgSelection{
+    height: 75%;
+    width: 5%;
+    max-height: 100%;
+  
+/*    background-color: darkmagenta;*/
+}
 
 
 @media screen and (max-width: 768px) {

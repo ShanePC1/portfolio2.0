@@ -7,3 +7,26 @@ Once those are fixed created a partial for purchase print whihc will apply to ev
 Will need to create all the check out logic
 Once that is done create a merch store. 
  
+11/20 All but homepage will not have logo will use "mobileHeader"  instead for now.
+Removed the x for close from all photos as all images can be clicked close
+Removed - .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+removed background color from modal content and instead added it to #modalDescription 
+	the idea is even though it looks a litte odd rn all images will have the purchase logic here so the black box wont always be jsut floating like it is on most images rn 
+
+
+router.get('/grid/japan', (req, res) => {
+    res.render('japan', { photoList:japanPhotos });
+       <%- include('./partials/photoGrid'); %>

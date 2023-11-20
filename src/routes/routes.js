@@ -24,7 +24,7 @@ const japanPhotos = [
     { imageUrl: '/images/_DSC0307.jpg', description: '' },
     { imageUrl: '/images/_DSC0246-2.jpg', description: '' },
     { imageUrl: '/images/_DSC0225-2.jpg', description: '' },
-    { imageUrl: '/images/_DSC0210.jpg', description: '' },
+    { imageUrl: '/images/_DSC0210.jpg', description: 'Hiroshima, The Flame of Peace, a feature of the pond in Peace Memorial Park, will be extinguished only once every nuclear weapon on earth has been destroyed.' },
     { imageUrl: '/images/_DSC0203.jpg', description: '' },
     { imageUrl: '/images/_DSC0155-Pano.jpg', description: '' },
     { imageUrl: '/images/_DSC0102.jpg', description: '' },
@@ -80,7 +80,7 @@ router.get('/grid', (req, res) => {
 
 //I think these could be handled in the same way the navbar is each just filled with new content but sharing the layou
 router.get('/grid/japan', (req, res) => {
-    res.render('japan', { japanPhotos });
+    res.render('japan', { photoList:japanPhotos });
 });
 router.get('/grid/surfing', (req, res) => {
     res.render('surf', { photos });
@@ -92,7 +92,7 @@ router.get('/grid/cars', (req, res) => {
     res.render('cars', { photos });
 });
 router.get('/grid/cars/drifting', (req, res) => {
-    res.render('drift', { driftPhotos });
+    res.render('drift', { photoList:driftPhotos });
 });
 //everything else
 router.get('/grid/cars/all', (req, res) => {
