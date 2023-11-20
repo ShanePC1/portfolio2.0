@@ -4,8 +4,8 @@ body {
     padding: 0;
     /*        background-color: #f4f4f4;*/
     background-color: #141F25;
-     color: #FFF1FD;
-/*    #2A373F;*/
+    color: #FFF1FD;
+    /*    #2A373F;*/
 }
 
 .image-container {
@@ -54,7 +54,7 @@ body {
     max-height: 80%;
     overflow-y: no;
     text-align: left;
-/*    background-color: black;*/
+    /*    background-color: black;*/
     color: white;
 }
 
@@ -76,16 +76,17 @@ body {
     background-color: black;
     /*        text-align: left;*/
 
+
 }
 
 
 
-.imgSelection{
+.imgSelection {
     height: 75%;
     width: 5%;
     max-height: 100%;
-  
-/*    background-color: darkmagenta;*/
+
+    /*    background-color: darkmagenta;*/
 }
 
 
@@ -105,11 +106,30 @@ body {
             height: auto;
             display: block;
         }*/
+    #modalDescription {
+        max-width:  25%;
+    }
+
     p {
         font-size: 2.5vh;
     }
 
+    .cartContainerModal {
+        font-size: 3vh
+    }
 
+    summary {
+        font-size: 3vh
+    }
 
+    #printSize {
+        font-size: 2.5vh;
+    }
+
+    button {
+        font-size: 2.5vh;
+    }
+    select{
+        text-overflow: ellipsis;
+    }
 }
-

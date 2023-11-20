@@ -14,17 +14,17 @@ router.get('/', (req, res) => {
 const japanPhotos = [
     { imageUrl: '/images/_DSC0104.jpg', description: 'JDM Oddessey' },
     { imageUrl: '/images/_DSC0815.jpg', description: 'Japan VW Bus' },
-    { imageUrl: '/images/_DSC0569.jpg', description: '' },
-    { imageUrl: '/images/_DSC0489-2.jpg', description: '' },
-    { imageUrl: '/images/_DSC0430.jpg', description: '' },
-    { imageUrl: '/images/_DSC0408.jpg', description: '' },
-    { imageUrl: '/images/_DSC0386.jpg', description: '' },
+    { imageUrl: '/images/_DSC0569.jpg', description: 'Japan' },
+    { imageUrl: '/images/_DSC0489-2.jpg', description: 'Japan' },
+    { imageUrl: '/images/_DSC0430.jpg', description: 'Japan' },
+    { imageUrl: '/images/_DSC0408.jpg', description: 'Japan' },
+    { imageUrl: '/images/_DSC0386.jpg', description: 'Japan' },
     { imageUrl: '/images/_DSC0334.jpg', description: '' },
     { imageUrl: '/images/_DSC0311.jpg', description: '' },
-    { imageUrl: '/images/_DSC0307.jpg', description: '' },
+    { imageUrl: '/images/_DSC0307.jpg', description: 'Japan' },
     { imageUrl: '/images/_DSC0246-2.jpg', description: '' },
     { imageUrl: '/images/_DSC0225-2.jpg', description: '' },
-    { imageUrl: '/images/_DSC0210.jpg', description: 'Hiroshima, The Flame of Peace, a feature of the pond in Peace Memorial Park, will be extinguished only once every nuclear weapon on earth has been destroyed.' },
+    { imageUrl: '/images/_DSC0210.jpg', description: 'Hiroshima Japan, The Flame of Peace, a feature of the pond in Peace Memorial Park, will be extinguished only once every nuclear weapon on earth has been destroyed.' },
     { imageUrl: '/images/_DSC0203.jpg', description: '' },
     { imageUrl: '/images/_DSC0155-Pano.jpg', description: '' },
     { imageUrl: '/images/_DSC0102.jpg', description: '' },
@@ -32,7 +32,7 @@ const japanPhotos = [
     { imageUrl: '/images/_DSC0096.jpg', description: '' },
     { imageUrl: '/images/_DSC0092.jpg', description: '' },
     { imageUrl: '/images/_DSC0087.jpg', description: '' },
-    { imageUrl: '/images/_DSC0086.jpg', description: '' },
+    { imageUrl: '/images/_DSC0086.jpg', description: 'Japan' },
     { imageUrl: '/images/_DSC0084.jpg', description: '' },
     { imageUrl: '/images/_DSC0079.jpg', description: '' },
     { imageUrl: '/images/_DSC0078.jpg', description: '' },
@@ -47,11 +47,11 @@ const japanPhotos = [
 ];
 const recPhotos = japanPhotos.slice(-3);
 
-const genCarPhotos =[
-{ imageUrl: '/images/JSO_1764.jpg', description: 'AudiRS6,S200,cars' },
-{ imageUrl: '/images/JSO_1983.jpg', description: 'S200,cars' },
-{ imageUrl: '/images/JSO_2235.jpg', description: 'FocusSt,cars' },
-  ]
+const genCarPhotos = [
+    { imageUrl: '/images/JSO_1764.jpg', description: 'AudiRS6,S200,cars' },
+    { imageUrl: '/images/JSO_1983.jpg', description: 'S200,cars' },
+    { imageUrl: '/images/JSO_2235.jpg', description: 'FocusSt,cars' },
+]
 
 const portfolioPhotos = [
     { imageUrl: '/images/JSO_4730.jpg', description: 'drift' },
@@ -80,23 +80,23 @@ router.get('/grid', (req, res) => {
 
 //I think these could be handled in the same way the navbar is each just filled with new content but sharing the layou
 router.get('/grid/japan', (req, res) => {
-    res.render('japan', { photoList:japanPhotos });
+    res.render('japan', { photoList: japanPhotos });
 });
 router.get('/grid/surfing', (req, res) => {
-    res.render('surf', { photos });
+    res.render('surf', { photoList: surfPhotos });
 });
 router.get('/grid/aiContent', (req, res) => {
-    res.render('aiPage', { aiCon });
+    res.render('aiPage', { photoList: aiCon });
 });
-router.get('/grid/cars', (req, res) => {
-    res.render('cars', { photos });
+router.get('/grid/cars', (req, res) => { //what is this one?
+    res.render('cars', { photoList: photos });
 });
 router.get('/grid/cars/drifting', (req, res) => {
-    res.render('drift', { photoList:driftPhotos });
+    res.render('drift', { photoList: driftPhotos });
 });
 //everything else
 router.get('/grid/cars/all', (req, res) => {
-    res.render('allCars', { genCarPhotos });
+    res.render('allCars', { photoList: genCarPhotos });
 });
 
 
