@@ -51,6 +51,21 @@ const genCarPhotos = [
     { imageUrl: '/images/JSO_1764.jpg', description: 'AudiRS6,S200,cars' },
     { imageUrl: '/images/JSO_1983.jpg', description: 'S200,cars' },
     { imageUrl: '/images/JSO_2235.jpg', description: 'FocusSt,cars' },
+    { imageUrl: '/images/mysteryMeat-01.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-02.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-03.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-04.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-05.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-06.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-07.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-08.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-09.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-10.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-11.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-12.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-13.jpg', description: '' },
+    { imageUrl: '/images/mysteryMeat-14.jpg', description: '' },
+    
 ]
 
 const portfolioPhotos = [
@@ -58,6 +73,8 @@ const portfolioPhotos = [
     { imageUrl: '/images/_DSC0489-2.jpg', description: 'japan' },
     { imageUrl: '/images/JSO_1764.jpg', description: 'cars' },
     { imageUrl: '/images/photo1.jpg', description: 'thisIsai' },
+    { imageUrl: '/images/wetLands-04.jpg', description: 'birds' },
+        { imageUrl: '/images/surfing-5.jpg', description: 'surf' },
 ];
 
 const driftPhotos = [
@@ -67,11 +84,39 @@ const driftPhotos = [
 
 ];
 
+const surfPhotos = [
+    { imageUrl: '/images/surfing-1.jpg', description: '' },
+    { imageUrl: '/images/surfing-2.jpg', description: '' },
+    { imageUrl: '/images/surfing-3.jpg', description: '' },
+    { imageUrl: '/images/surfing-4.jpg', description: '' },
+    { imageUrl: '/images/surfing-5.jpg', description: '' },
+];
+
+
 const aiCon = [
     { imageUrl: '/images/photo1.jpg', description: 'Description 1' },
     { imageUrl: '/images/c4s.jpg', description: 'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
 
-]
+];
+const birdsBugsPhotos = [
+    { imageUrl: '/images/wetlands-01.jpg', description: 'jumpingSpider' },
+    { imageUrl: '/images/wetlands-02.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-03.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-04.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-05.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-06.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-07.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-08.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-09.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-10.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-11.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-12.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-13.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-14.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-15.jpg', description: 'turkey vulture' },
+    { imageUrl: '/images/wetlands-16.jpg', description: 'turkey vulture' },
+    
+];
 
 // Grid Page Route Handler
 router.get('/grid', (req, res) => {
@@ -99,7 +144,9 @@ router.get('/grid/cars/all', (req, res) => {
     res.render('allCars', { photoList: genCarPhotos });
 });
 
-
+router.get('/grid/birds', (req, res) => { //what is this one?
+    res.render('birds', { photoList: birdsBugsPhotos });
+});
 // Contact Page (Placeholder route)
 router.get('/contact', (req, res) => {
     res.render('contact'); // Placeholder message, replace with actual contact content

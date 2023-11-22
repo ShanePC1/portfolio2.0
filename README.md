@@ -30,3 +30,9 @@ removed background color from modal content and instead added it to #modalDescri
 router.get('/grid/japan', (req, res) => {
     res.render('japan', { photoList:japanPhotos });
        <%- include('./partials/photoGrid'); %>
+
+
+
+Stopped here
+Add to cart and select size buttons were work as I wanted so I have what is currently there but that closes the modal(maybe thats fine?)
+On mobile sometimes the sizing is fine and sometimes its tiny, not sure why. need to work out how to click through photos some it doesnt work on mobile 
